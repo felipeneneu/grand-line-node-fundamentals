@@ -1,0 +1,17 @@
+{
+  "name": "fundamentals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch missoes/01-east-blue/src/server.js",
+    "start": "node --watch src/server.js",
+    "mentor": "powershell -ExecutionPolicy Bypass -File ./scripts/mentor.ps1",
+    "mentor:east-blue": "powershell -ExecutionPolicy Bypass -File ./scripts/mentor.ps1 -Arco EastBlue -Arquivo src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
