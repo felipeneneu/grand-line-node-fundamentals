@@ -1,162 +1,129 @@
-# 🏴‍☠️ Grand Line Backend: Guia Definitivo do East Blue (Fundamentos do Node.js)
+# 🏴‍☠️ Grand Line Backend: Módulo 01 — East Blue (Node.js Fundamentals)
 
 > *"O aprendiz deve ser capaz de explicar cada linha do código que escrever. Se ele não souber explicar, o navio não sai do cais."*  
-> — **Silvers Rayleigh**, O Rei das Trevas & Mentor Sênior de Backend
+> — **Silvers Rayleigh**, O Rei das Trevas & Mentor Sênior
 
-Bem-vindo ao **East Blue**, o ponto de partida de qualquer engenheiro de software que deseja dominar **Node.js de verdade**. 
-
-Este repositório foi desenhado para quem **nunca viu um vídeo sobre Node.js** ou quer fugir do *"tutorial hell"* (a ilusão de apenas copiar código alheio). Aqui você vai aprender os fundamentos primitivos da computação em servidores modernos, sem recorrer a frameworks mágicos como Express ou Fastify de início.
-
----
-
-## 🧭 O Que é o Método Grand Line?
-
-Neste repositório, você não estuda passivamente. Você é treinado por um **Mentor Sênior com Inteligência Artificial (Silvers Rayleigh)** que segue regras rigorosas:
-
-1. **Abordagem Socrática:** Ele **nunca** te dá o código corrigido de primeira. Ele faz perguntas que forçam você a debugar e entender a causa raiz do erro.
-2. **Metáforas Vivas (One Piece):** Todo conceito técnico abstrato (Streams, Buffers, RAM, Persistência) é ancorado na tripulação dos Chapéus de Palha e na física dos oceanos.
-3. **A Regra do Caderno Físico:** Cada conceito concluído gera um quadro fechado em ASCII na pasta [`apostila/01-east-blue/`](./apostila/01-east-blue/) para você transcrever à mão com caneta no seu caderno.
-4. **RPG de Carreira (Ficha do Pirata):** Você começa com recompensa **฿ 0 Berries**. Conforme resolve desafios e domina o Haki, sua recompensa sobe até os **฿ 45.000.000 de Berries**.
-5. **A Boss Fight Autônoma:** Ao final do guia, você deve construir a sua própria API sozinho a partir de uma especificação profissional ([`missoes/01-east-blue/SPEC.md`](./missoes/01-east-blue/SPEC.md)).
+[![GitHub Repository](https://img.shields.io/badge/GitHub-felipeneneu%2Fgrand--line--node--fundamentals-blue?style=for-the-badge&logo=github)](https://github.com/felipeneneu/grand-line-node-fundamentals)
+[![Node.js](https://img.shields.io/badge/Node.js-18%20%7C%2024%2B-green?style=for-the-badge&logo=node.js)](https://nodejs.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](./LICENSE)
 
 ---
 
-## 🌊 O Que é o Node.js e Como Ele Funciona?
+## 🧭 O Que é Este Projeto?
 
-O **Node.js** não é uma linguagem de programação nem um framework: é um **ambiente de execução JavaScript (Runtime)** construído sobre o motor **V8 do Google Chrome** e a biblioteca assíncrona **libuv**.
+O **Grand Line Backend** é um método imersivo e socrático de aprendizado de engenharia de software backend com **Node.js Nativo**. 
 
-### O Event Loop e a Single-Thread Não-Bloqueante
-Em servidores tradicionais antigos (como Apache com PHP ou Java clássico), cada usuário que acessava o servidor ocupava uma *Thread* do sistema operacional. Se 500 pessoas acessassem ao mesmo tempo, 500 threads pesadas disputavam a memória do servidor até ele explodir.
+Ele une três forças:
+1. **Inteligência Artificial como Mentor Socrático (Silvers Rayleigh):** Um agente que se recusa a entregar código pronto, cobrando explicação linha a linha e forçando você a debugar de verdade.
+2. **Gamificação no Universo de One Piece:** Acompanhamento de evolução através de Níveis de Haki e Recompensas em Berries na sua própria Ficha de Pirata.
+3. **Boss Fights com Especificações Reais:** Mini-projetos práticos desenvolvidos sem tutoriais guiados, baseados em requisitos funcionais (RFs), regras de negócio (RNs) e critérios de aceite.
 
-O Node.js funciona de forma diferente:
-- **A Single-Thread do JavaScript:** Existe apenas um cozinheiro principal no convés (a thread principal de execução).
-- **I/O Não-Bloqueante:** Quando o servidor precisa ler um arquivo pesado no disco (`fs.readFile`) ou consultar um banco de dados, o cozinheiro não fica parado esperando! Ele delega o trabalho para a tripulação no porão (o *Worker Pool* da `libuv`) e continua atendendo novos clientes imediatamente.
-- **O Event Loop:** É a vigília constante que avisa: *"Capitão, o arquivo que estava sendo lido no disco terminou de chegar! Execute a resposta agora!"*.
+Este primeiro repositório cobre **100% do East Blue** (Fundamentos Nativos do Node.js: Streams, Buffers, Roteamento com Regex e Persistência em Disco sem frameworks).
 
 ---
 
-## 📦 Streams & Buffers: O Rio de Dados
+## 📚 Apostila Completa & Tutoriais Passo a Passo
 
-A maioria dos desenvolvedores iniciantes comete o erro de achar que a internet envia dados inteiros de uma vez só. 
+Para quem está começando do absoluto zero e nunca programou um servidor na vida, todo o conteúdo conceitual e prático foi dividido em capítulos detalhados dentro da pasta [`docs/`](./docs/):
 
-> **A Dor do Mundo Real:** Se um cliente enviar um arquivo de vídeo de 2 Gigabytes para o seu servidor e você tentar colocar tudo em uma variável comum (`const data = ...`), a memória RAM do servidor esgota e o navio afunda (`FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed`).
+| Capítulo | Tema Abordado | O Que Você Aprende |
+| :--- | :--- | :--- |
+| **[Capítulo 01](./docs/01-como-criar-um-servidor-http.md)** | **O que é Node.js e HTTP Nativo** | V8, Event Loop, Cliente/Servidor, Métodos HTTP (`GET`, `POST`, `PUT`, `DELETE`) e Status Codes. |
+| **[Capítulo 02](./docs/02-streams-e-buffers-na-pratica.md)** | **Streams & Buffers na Prática** | O rio de dados, Chunks binários, alocação de memória RAM e consumo com `for await`. |
+| **[Capítulo 03](./docs/03-middlewares-e-tratamento-json.md)** | **Middlewares e Parser de JSON** | O ciclo de interceptação, cabeçalhos `Content-Type` e proteção contra payloads vazios com `try/catch`. |
+| **[Capítulo 04](./docs/04-persistencia-em-disco-e-uuid.md)** | **Persistência em Disco & UUIDs** | Memória RAM vs Arquivo Físico (`node:fs/promises`), perigos de `length + 1` e chaves com `randomUUID()`. |
+| **[Capítulo 05](./docs/05-rotas-dinamicas-com-regex.md)** | **Rotas Dinâmicas & Expressões Regulares** | Route Params vs Query Params, captura com Named Groups `(?<id>...)` e modularização em `routes.js`. |
 
-### 1. O que é um Buffer?
-Um **Buffer** é um espaço físico na memória RAM reservado para armazenar **dados binários brutos** (sequências de bytes como `4c 75 66 66 79`). Ele é a madeira crua do barril antes de você esculpir e transformar em texto legível (`Buffer.from("Luffy")`).
+---
 
-### 2. O que é uma Stream?
-Uma **Stream** é a transferência de dados **aos pedaços (Chunks)** ao longo do tempo, em vez de enviar tudo de uma vez.
-- **A Metáfora:** Imagine 10.000 caixas de provisões no cais. Em vez do marinheiro carregar todas as 10.000 nas costas (estouro de RAM), você instala uma **esteira rolante** (Stream) e processa caixa por caixa conforme elas chegam.
+## 📓 O Caderno Físico (Quadros de 1 Página)
 
-Existem 4 tipos de Streams no Node.js:
-1. **Readable Stream:** De onde você lê dados aos pedaços (ex: `request` HTTP, leitura de arquivo).
-2. **Writable Stream:** Para onde você envia dados aos pedaços (ex: `response` HTTP, gravação de arquivo).
-3. **Transform Stream:** Lê um chunk, transforma ele (ex: criptografa ou compacta) e cospe do outro lado.
-4. **Duplex Stream:** Permite ler e escrever ao mesmo tempo (ex: sockets de rede).
+Seguindo a **Regra do Caderno Físico**, cada tópico estudado possui um quadro fechado em ASCII para ser transcrito à mão com caneta no seu caderno físico de estudos. Eles estão catalogados em:
 
-### Como consumir uma Stream no Node Moderno:
-```javascript
-const buffers = []
+- [`apostila/01-east-blue/01-http-status-codes-memoria.md`](./apostila/01-east-blue/01-http-status-codes-memoria.md)
+- [`apostila/01-east-blue/02-streams-buffers-pipe.md`](./apostila/01-east-blue/02-streams-buffers-pipe.md)
+- [`apostila/01-east-blue/03-persistencia-fs-database.md`](./apostila/01-east-blue/03-persistencia-fs-database.md)
+- [`apostila/01-east-blue/04-rotas-regex-parametros.md`](./apostila/01-east-blue/04-rotas-regex-parametros.md)
 
-// O 'for await' consome cada caixote (chunk) conforme ele chega pela esteira
-for await (const chunk of request) {
-  buffers.push(chunk)
-}
+---
 
-// Junta todos os pedaços e converte para texto legível
-const fullBody = Buffer.concat(buffers).toString()
+## 💻 Requisitos Mínimos
+
+- **Node.js:** Versão 18.0.0 ou superior (testado e homologado no **Node.js v24+**).
+- **Git:** Para clonar e versionar o seu código.
+- **Cliente HTTP:** Qualquer cliente para testar requisições (Insomnia, Thunder Client, Postman ou extensões do VS Code / Antigravity).
+- **Editor / IDE com Agente de IA:** Antigravity, Cursor, Claude Code ou similar (que leia o arquivo de regras [`AGENTS.md`](./AGENTS.md)).
+
+---
+
+## 🚀 Como Iniciar a Sua Jornada do Zero
+
+### 1. Clonar o Repositório
+```bash
+git clone https://github.com/felipeneneu/grand-line-node-fundamentals.git
+cd grand-line-node-fundamentals
 ```
 
----
+### 2. A Cerimônia de Iniciação com Silvers Rayleigh
+1. Abra este projeto no seu editor com IA habilitada.
+2. Abra o chat com o assistente e envie a mensagem:
+   > *"Silvers Rayleigh, cheguei ao cais do East Blue e quero iniciar o meu treinamento!"*
+3. O Rayleigh executará a **Cerimônia de Iniciação**: ele perguntará o seu nome e seu grande objetivo como engenheiro, personalizando o seu arquivo [`diario/PIRATA.md`](./diario/PIRATA.md) com a sua recompensa inicial de **฿ 0 Berries**.
 
-## 🗄️ Persistência em Disco: RAM vs Arquivo Físico
-
-Qualquer dado guardado em variáveis comuns de JavaScript (como `const piratas = []` ou `#database = {}`) vive na **memória RAM**.
-- **A Memória RAM é volátil:** Se você fechar o terminal ou reiniciar o computador, tudo evapora instantaneamente.
-- **O Disco Permanente (`node:fs/promises`):** Para o dado sobreviver a tempestades, precisamos gravá-lo com tinta permanente no diário de bordo (`db.json`).
-
-### O Padrão UUID (Universally Unique Identifier)
-Nunca use identificadores sequenciais baseados no tamanho da lista (`arr.length + 1`):
-1. **Colisão:** Se você tiver 3 itens, deletar o segundo e criar outro, haverá dois itens com ID `3`.
-2. **Segurança (IDOR):** Qualquer usuário consegue vasculhar dados de outras pessoas apenas mudando `id=1` para `id=2` na URL.
-
-No Node moderno, importamos nativamente o gerador de identidades criptográficas:
-```javascript
-import { randomUUID } from 'node:crypto';
-
-const novoItem = {
-  id: randomUUID(), // Gera: 'f40707c1-2332-4bb7-a20a-b74fc88a20c0'
-  nome: 'Zoro'
-}
+### 3. Rodar o Servidor
+```bash
+# Executa o servidor nativo em modo watch (reinicia a cada alteração)
+npm run dev
 ```
-
----
-
-## 🧭 A Bússola das Rotas: Route Params vs Query Params
-
-Em uma API REST bem projetada, existem 3 formas de enviar dados do cliente para o servidor:
-
-| Tipo | Onde fica na requisição? | Para que serve? | Exemplo |
-| :--- | :--- | :--- | :--- |
-| **Route Parameters** | No caminho (Path) da URL | Identificar um recurso específico | `DELETE /piratas/71ac5f52` |
-| **Query Parameters** | No final da URL (após `?`) | Filtros, ordenação e paginação | `GET /piratas?search=Luffy&page=1` |
-| **Request Body** | No corpo oculto da requisição | Criação e alteração com dados ricos | `POST /piratas` com JSON |
-
-### Como criar um Roteador Dinâmico com Expressões Regulares (Regex):
-Para permitir rotas como `/pedidos/:id`, usamos o utilitário nativo de Regex que substitui `:parametro` por um grupo nomeado `(?<parametro>[a-z0-9-_]+)`:
-
-```javascript
-// src/utils/build-route-path.js
-export function buildRoutePath(path) {
-  const routeParametersRegex = /:([a-zA-Z]+)/g
-  const pathWithParams = path.replaceAll(routeParametersRegex, '(?<$1>[a-z0-9\\-_]+)')
-  const pathRegex = new RegExp(`^${pathWithParams}(?<query>\\?(.*))?$`)
-
-  return pathRegex
-}
-```
-
----
-
-## 🚀 Como Iniciar a Sua Jornada com o Rayleigh
-
-### 1. Requisitos
-- [Node.js](https://nodejs.org/) instalado (versão 18+ ou 24+ recomendada).
-- Um editor com suporte a Agentes de IA (como **Antigravity**, **Cursor**, **Claude Code** ou extensões equivalentes).
-
-### 2. A Cerimônia de Iniciação
-1. Clone este repositório no seu computador:
-   ```bash
-   git clone https://github.com/SEU_USUARIO/grand-line-node-fundamentals.git
-   cd grand-line-node-fundamentals
-   npm install
-   ```
-2. Abra o chat do seu Agente de IA e diga:
-   > *"Silvers Rayleigh, estou pronto para iniciar o meu treinamento no East Blue!"*
-3. O Rayleigh vai acolher você, perguntar o seu **nome de desenvolvedor**, seus **objetivos** e registrar a sua ficha oficial em [`diario/PIRATA.md`](./diario/PIRATA.md)!
 
 ---
 
 ## ⚔️ A Boss Fight do East Blue: O Restaurante Baratie
 
-Quando você estudar as aulas e entender o código de exemplo em `src/`, sua provação final será abrir a especificação oficial:
+Ao terminar os 5 capítulos teóricos e o código de treino em `src/`, você enfrentará a sua primeira missão profissional autônoma:
 
 👉 **[`missoes/01-east-blue/SPEC.md`](./missoes/01-east-blue/SPEC.md)**
 
-Você deverá implementar um sistema de comandas 100% autônomo dentro de `missoes/01-east-blue/src/server.js` atendendo a todos os:
-- **Requisitos Funcionais (RFs):** `POST /pedidos`, `GET /pedidos`, filtros, `PATCH /pedidos/:id/entregar`, `DELETE /pedidos/:id`.
-- **Regras de Negócio (RNs):** Validação com `400 Bad Request`, `404 Not Found` para IDs inexistentes, status inicial pendente e ISO dates.
-- **Requisitos Não-Funcionais (RNFs):** Zero frameworks (apenas `node:http`, `node:fs`, `node:crypto`).
+Você deverá construir um sistema de comandas 100% nativo para o Chefe Zeff, atendendo a todos os requisitos de negócio e restrições de engenharia em `missoes/01-east-blue/src/server.js`.
 
-Ao terminar, chame o Rayleigh no chat:
+Ao finalizar, chame o Rayleigh para realizar o **Code Review de Engenharia Sênior**:
 > *"Rayleigh, terminei a Missão do Baratie! Pode auditar o meu código?"*
 
-Se aprovado, você receberá a sua recompensa de **฿ 45.000.000 de Berries** e o passaporte oficial para o **Arco de Alabasta**!
+Se aprovado, sua recompensa sobe para **฿ 45.000.000 de Berries**, seu **Haki do Conquistador** é despertado e você ganha o passaporte para o **Arco de Alabasta**!
 
 ---
 
-## 📜 Licença e Créditos
+## 📁 Estrutura do Repositório
 
-Este projeto é de código aberto sob a licença MIT. Criado e documentado como uma metodologia livre de aprendizado acelerado de backend. 
+```text
+├── .agents/
+│   └── skills/
+│       └── revisao-arco/          # Habilidade de auditoria socrática da IA
+├── apostila/
+│   └── 01-east-blue/              # Quadros fechados para cópia no caderno físico
+├── diario/
+│   ├── PIRATA.md                  # Ficha do Pirata do aluno (Bounties e Hakis)
+│   ├── exemplos/                  # Exemplos de fichas aprovadas (ex: Felipe)
+│   └── YYYY-MM-DD-*.md            # Diários de bordo e sabatinas
+├── docs/                          # Tutoriais passo a passo para iniciantes
+│   ├── 01-como-criar-um-servidor-http.md
+│   ├── 02-streams-e-buffers-na-pratica.md
+│   ├── 03-middlewares-e-tratamento-json.md
+│   ├── 04-persistencia-em-disco-e-uuid.md
+│   └── 05-rotas-dinamicas-com-regex.md
+├── missoes/
+│   └── 01-east-blue/
+│       ├── SPEC.md                # Especificação da Boss Fight do Baratie
+│       └── src/                   # Solução construída de forma autônoma
+├── src/                           # Código das aulas guiadas de treino
+├── AGENTS.md                      # Personalidade e regras socráticas do Rayleigh
+└── package.json
+```
 
-Sinta-se livre para usar esta estrutura para os seus próprios estudos, gravar vídeos, compartilhar com a comunidade e forjar os seus próprios aprendizes no caminho até o One Piece! 🏴‍☠️
+---
+
+## 📜 Licença
+
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+
+Desenvolvido por **Felipe** ([@felipeneneu](https://github.com/felipeneneu)). Sinta-se livre para clonar, estudar, criar conteúdo e navegar pelos mares do backend! 🏴‍☠️
