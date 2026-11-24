@@ -2,34 +2,45 @@
 
 Bem-vindo ao **Mural de Missões da Grand Line**. Aqui você não é apenas um aluno assistindo a aulas; você é o capitão e o arquiteto de software do seu navio.
 
-Ao final de cada Arco de estudos do curso, o **Sensei Silvers Rayleigh** publica uma especificação de missão profissional aqui.
+Ao final das aulas ou para testar o seu domínio de Haki, o **Sensei Silvers Rayleigh** disponibiliza as especificações de missões divididas por nível de dificuldade, todas 100% nativas em Node.js (sem frameworks externos).
 
 ---
 
-## Como Funcionam as Missões de Travessia
+## 🎯 Quadro de Missões do East Blue (Fundamentos Nativos)
 
-1. **A Especificação Profissional (`SPEC.md`):**  
-   Você recebe um documento de engenharia real, no mesmo padrão de grandes empresas de tecnologia (com Requisitos Funcionais, Regras de Negócio, Requisitos Não-Funcionais e Matriz de Rotas).
-2. **Desenvolvimento Autônomo:**  
-   Você constrói a aplicação na sua pasta de missão correspondente (`missoes/<arco>/src/`), **sem olhar o código das aulas**, forçando o raciocínio solo.
-3. **Sabatina do Rei das Trevas:**  
-   Ao terminar, você chama o Rayleigh: *"Rayleigh, terminei a Missão do Arco!"*.
-4. **Code Review Profissional & Aumento de Recompensa:**  
-   O Rayleigh faz um Code Review detalhado pontuando:
-   - 🔴 O que quebrou ou gerou vulnerabilidade/inconsistência.
-   - 🟡 O que funciona, mas fere as boas práticas de engenharia.
-   - 🟢 O que você dominou com excelência.
-   - 💰 Aumento da sua Recompensa (Bounty) em [diario/PIRATA.md](../diario/PIRATA.md) e liberação do próximo mar!
+### 🟢 Nível Fácil (Easy) — *Fundamentos Puros, Status Codes e Validações*
+| ID | Missão | Foco Técnico | Recompensa | Especificação |
+| :--- | :--- | :--- | :--- | :--- |
+| **03** | **Os Cartazes de Shells Town** | HTTP puro, status codes semânticos, `crypto.randomUUID()`. | + ฿ 10.000.000 | [Ver SPEC](./03-shells-town/SPEC.md) |
+| **04** | **O Almoxarifado de Cocoyasi** | Query strings simples, cálculos agregados em memória e deleção semântica (`204`). | + ฿ 12.000.000 | [Ver SPEC](./04-cocoyasi-laranjas/SPEC.md) |
+| **05** | **O Livro de Receitas de Sanji** | Validação de arrays em JSON, atualização parcial com `PATCH` e integridade de tipos. | + ฿ 15.000.000 | [Ver SPEC](./05-receitas-sanji/SPEC.md) |
 
 ---
 
-## Status das Missões por Arco
+### 🟡 Nível Médio (Normal) — *Rotas com Regex, Persistência e Filtros Dinâmicos*
+| ID | Missão | Foco Técnico | Recompensa | Especificação |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **O Restaurante Baratie (Boss Fight)** | CRUD completo nativo, middleware JSON e persistência `node:fs`. | + ฿ 30.000.000 | [Ver SPEC](./01-east-blue/SPEC.md) |
+| **06** | **A Cartografia Náutica de Nami** | Rotas dinâmicas aninhadas com múltiplos parâmetros regex (`:ilhaId/rotas/:rotaId`). | + ฿ 22.000.000 | [Ver SPEC](./06-cartografia-nami/SPEC.md) |
+| **07** | **O Catálogo de Espadas de Tashigi** | Busca dinâmica indexada por múltiplos campos (`Object.entries.some`). | + ฿ 25.000.000 | [Ver SPEC](./07-forja-espadas/SPEC.md) |
+| **08** | **O Arsenal de Munições de Usopp** | Operações atômicas de estoque, prevenção de saldo negativo e auditoria ISO. | + ฿ 25.000.000 | [Ver SPEC](./08-arsenal-usopp/SPEC.md) |
+| **09** | **O Registro de Ataques de Kuro** | Middleware nativo de auditoria de latência (`X-Response-Time` nos headers). | + ฿ 28.000.000 | [Ver SPEC](./09-vila-syrup-kuro/SPEC.md) |
 
-| Arco | Missão (Boss Fight) | Recompensa em Jogo | Status |
-| :--- | :--- | :--- | :--- |
-| **01. East Blue** | [O Sistema do Restaurante Baratie](./01-east-blue/SPEC.md) | + ฿ 30.000.000 Berries | 🔒 Bloqueado (Em preparação) |
-| **02. Alabasta** | A Resistência de Rainbase (API com Express & REST) | + ฿ 70.000.000 Berries | 🔒 Bloqueado |
-| **03. Water 7** | O Estaleiro da Galley-La (Arquitetura em Camadas) | + ฿ 150.000.000 Berries | 🔒 Bloqueado |
-| **04. Enies Lobby** | Sobrevivência ao Buster Call (Resiliência & Zod) | + ฿ 300.000.000 Berries | 🔒 Bloqueado |
-| **05. Marineford** | A Fortaleza de Impel Down (Bancos de Dados & ACID) | + ฿ 500.000.000 Berries | 🔒 Bloqueado |
-| **06. New World** | A Frota dos Chapéus de Palha (Microserviços & Filas) | + ฿ 1.500.000.000 Berries | 🔒 Bloqueado |
+---
+
+### 🔴 Nível Difícil (Hard) — *Streams Avançadas, Concorrência, Mutex e Proteção DoS*
+| ID | Missão | Foco Técnico | Recompensa | Especificação |
+| :--- | :--- | :--- | :--- | :--- |
+| **02** | **O Arsenal de Loguetown** | Trava de concorrência na escrita, blindagem de payload (50KB) e máquina de estados. | + ฿ 40.000.000 | [Ver SPEC](./02-loguetown/SPEC.md) |
+| **10** | **Importação Massiva de Pólvora** | Upload e processamento de CSV via Streams puras (`node:readline`) sem libs externas. | + ฿ 45.000.000 | [Ver SPEC](./10-importacao-csv-polvora/SPEC.md) |
+| **11** | **O Escudo de Fumaça de Smoker** | Rate Limiting nativo por IP (`429`), corte de stream por tamanho (`413`) e error boundary. | + ฿ 48.000.000 | [Ver SPEC](./11-escudo-smoker/SPEC.md) |
+| **12** | **O Cofre de Arlong Park** | Escrita atômica em disco (`.tmp` + `rename`) e fila Mutex contra corrupção concorrente. | + ฿ 50.000.000 | [Ver SPEC](./12-cofre-arlong-park/SPEC.md) |
+
+---
+
+## Como Realizar Qualquer Missão:
+1. Abra a especificação da missão (`SPEC.md`).
+2. Crie o servidor em `missoes/<pasta-da-missao>/src/server.js`.
+3. Desenvolva do zero sem frameworks.
+4. Chame o Rayleigh no chat:
+   > *"Rayleigh, concluí a Missão [Nome da Missão]! Pode fazer o Code Review completo."*
